@@ -1,0 +1,61 @@
+<div class="image"></div>
+<div style="padding: 50px;">
+    <h1>Our Awesome Services</h1>
+    <hr>
+    <h3 style="margin-left: auto;
+    margin-right: auto;
+    max-width: 700px; text-align: center;">Lorem Ipsum is simply dummy text of the printing and typesetting Factory has
+        been the Factory's
+        standard dummy
+        text ever since the been when an unknown printer.</h3>
+</div>
+<div class="container">
+
+    <div style="    padding-bottom: 40px;
+    " class="row">
+        <div *ngFor="let col of cols" class="col-md-4">
+
+            <ng-container *ngIf="col.data">
+                <div style="border: 1px solid lightgray;
+                padding: 30px; margin-bottom:20px" *ngFor="let data of col.data">
+                    <h2>{{data.title}}</h2>
+                    <h5>{{data.desc}}</h5>
+                </div>
+
+            </ng-container>
+            <ng-container *ngIf="col.image">
+                <img style="height: 100%; width: 100%;" [src]="'assets/'+col.image">
+            </ng-container>
+
+
+        </div>
+    </div>
+</div>
+<!-- <div class="footer">
+    <div style="    background: #292929; color: white;
+    padding: 50px 120px 20px 120px;" class="row">
+        <div *ngFor="let list of lists" class="col-md-3">
+            <h2 *ngIf="list.name">{{list.name}}</h2>
+            <p *ngIf="list.title">{{list.title}}</p>
+            <ng-container *ngIf="list.images && list.images.length">
+                <div class="row ">
+                    <div *ngFor="let image of list.images" class="col-md-4 borders">
+                        <img style="margin-bottom: 10px;" width="100%" src="assets/{{image}}" alt="">
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<div style="background: #efefef;" class="footer-bottom">
+    <div style="padding: 35px 0px 15px 97px;" class="row">
+        <div class="col-md-6">
+            <p>Copyright © 2020 RdxTheme</p>
+        </div>
+        <div class="col-md-6" style="display: flex; justify-content: space-evenly;">
+            <h3>About</h3>
+            <h3> Help Desk</h3>
+            <h3>Privacy Policy</h3>
+        </div>
+    </div>
+</div> -->
