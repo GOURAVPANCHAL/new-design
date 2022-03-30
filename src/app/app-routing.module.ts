@@ -50,8 +50,12 @@ const routes: Routes = [
     component: ContactUsComponent
   },
   {
-    path: '',
+    path: 'home',
     component: HomepageComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 ];
 

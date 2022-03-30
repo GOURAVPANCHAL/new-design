@@ -1,78 +1,25 @@
 <div>
     <ul>
-        <li class="dropdown">
-            <a href="" style="border-bottom: 3px solid #fdc716;" class="dropbtn">HOME</a>
-            <div class="dropdown-content">
-                <a href="/OurCompanyComponent">HOME 1</a>
-                <a href='/app-our-company'>HOME 2</a>
-                <a href='#'>HOME 3</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href='/feature' class="dropbtn">FEATURE</a>
-            <div class="dropdown-content">
-                <a href='#'>FEATURE 1</a>
-                <a href='#'>FEATURE 2</a>
-                <a href='#'>FEATURE 3</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href='/page' class="dropbtn">PAGE</a>
-            <div class="dropdown-content">
-                <a href='#'>PAGE 1</a>
-                <a href='/login page'>Login Page</a>
-                <a href='/sign-Up'>sign-Up</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href='/shop' class="dropbtn">SHOP</a>
-            <div class="dropdown-content">
-                <a href='#'>SHOP 1</a>
-                <a href='#'>SHOP 2</a>
-                <a href='#'>SHOP 3</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href='/blog' class="dropbtn">BLOG</a>
-            <div class="dropdown-content">
-                <a href='#'>BLOG 1</a>
-                <a href='#'>BLOG 2</a>
-                <a href='#'>BLOG 3</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href='shortcode' class="dropbtn">SHORTCODE</a>
-            <div class="dropdown-content">
-                <a href='#'>SHORTCODE 1</a>
-                <a href='#'>SHORTCODE 2</a>
-                <a href='#'>SHORTCODE 3</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href='contactUs' class="dropbtn">CONTACT US</a>
-            <div class="dropdown-content">
-                <a href='#'>CONTACT US 1</a>
-                <a href='#'>CONTACT US 2</a>
-                <a href='#'>CONTACT US 3</a>
-            </div>
-        </li>
-
+        <ng-container *ngFor="let option of items ">
+            <li *ngIf="option.options == undefined" class="dropdown">
+                <a [routerLink]="option.link" routerLinkActive="active" class="dropbtn">{{option.label}}</a>
+            </li>
+            <li *ngIf="option.options && option.options.length" class="dropdown">
+                <a [routerLink]="option.link" routerLinkActive="active" class="dropbtn">{{option.label}}</a>
+                <div class="dropdown-content">
+                    <ng-container *ngFor="let subOption of option.options">
+                        <a routerLink="">{{subOption}}</a>
+                    </ng-container>
+                </div>
+            </li>
+        </ng-container>
     </ul>
     <div class="searchBox">
         <input class="searchInput" type="search" name="" placeholder="Search">
-        <button class="searchButton" href="#">
+        <button class="searchButton" routerLink="#">
             <i class="material-icons">
                 search
             </i>
         </button>
     </div>
 </div>
-<!-- <div class="searchBox">
-    <input class="searchInput" type="search" name="" placeholder="Search">
-    <button class="searchButton" href="#">
-        <i class="material-icons">
-            search
-        </i>
-    </button>
-</div> -->

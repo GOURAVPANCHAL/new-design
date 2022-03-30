@@ -45,6 +45,7 @@ h1,h3{
 
 .sidenav a:hover {
   color: #fdc716;
+  border-left: 2px solid;
 }
 
 .sidenav .closebtn {
